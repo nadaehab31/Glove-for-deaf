@@ -27,6 +27,8 @@ int main(void)
 	Dio_PinPullupState(B,0,Active);
 	Dio_PinPullupState(D,6,Active);
 	Dio_PinPullupState(D,2,Active);
+
+//initialising ADC and ADC channel used for reading flex sensors values
 	
 	ADC_Init();
 	LCD_Init();

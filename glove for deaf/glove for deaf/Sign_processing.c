@@ -24,6 +24,8 @@ uint8 Middle_String[5];
 uint8 Ring_String[5];
 uint8 Little_String[5];
 
+//signs
+
 uint8 String0[]={"Hello"};
 uint8 String1[]={"I Love You"};	 
 uint8 String2[]={"See You Later"};
@@ -125,7 +127,7 @@ void Selector_Set(uint8 Selector_Value)
 	}
 }
 
-void Sign_Values(void)
+void Sign_Values(void)    //displays values of flex sensors
 {
 	LCD_Command(ClearDispaly);
 	LCD_Postion(1,1);
@@ -175,7 +177,7 @@ void Sign_ClearAll()
 	
 }
 
-void Sign_Represent()
+void Sign_Represent()    //displays the equivalent word for each sign detected
 {
 	//Hello
 	if((Thumb_Value>=0x0305)&&(Thumb_Value<=0x0321)&&(Index_Value>=0x0310)&&(Index_Value<=0x0330)&&(Middle_Value>=0x0310)&&(Middle_Value<=0x0337)&&(Ring_Value>=0x030A)&&(Ring_Value<=0x032F)&&(Little_Value>=0x033D)&&(Little_Value<=0x035F))
@@ -284,8 +286,7 @@ void Sign_Represent()
 	  
 	  else
 	  {
-		 LCD_Command(ClearDispaly);
-		 
+		 LCD_Command(ClearDispaly);	 
 		  
 	  }
 	  
