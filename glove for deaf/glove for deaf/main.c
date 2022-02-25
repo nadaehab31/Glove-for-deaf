@@ -13,12 +13,21 @@
 #include  "Bitwise.h"
 #include  "Dio.h"
 #include "Sign_Processing.h"
-
+#include <avr/interrupt.h>
 
 
 
 int main(void)
-{	
+{	//setting ADC interrupt
+	
+	  ADC_Init();
+	  ADC_ChannelInit(0);  
+	  LCD_Init();
+	  sei();  //enable all interrupts
+	  SetBit(ADCSRA,ADIE); //enable ADC interrupt
+	  SetBit(ADCSRA,ADSC);
+      
+	
 	//setting selector pins as outputs
 	
 	Dio_PinSetDirection(B,0,PinOutput);  //Selector0
@@ -28,19 +37,22 @@ int main(void)
 	Dio_PinPullupState(D,6,Active);
 	Dio_PinPullupState(D,2,Active);
 
-//initialising ADC and ADC channel used for reading flex sensors values
+   
+	Sign_ClearAll();
 	
-	ADC_Init();
-	LCD_Init();
-	ADC_ChannelInit(0);
-    Sign_ClearAll();
     while (1)
     {
-		Sign_Read();
-		//Sign_Values();
-		Sign_Represent();
-		_delay_ms(2000);
+	
     }
+}
+
+
+ISR(ADC_vect)
+{ 
+	    Sign_Read();
+        //Sign_Values();
+		Sign_Represent();
+	    _delay_ms(2000);
 }
 
 

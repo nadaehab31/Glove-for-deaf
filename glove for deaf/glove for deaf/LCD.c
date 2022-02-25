@@ -6,7 +6,7 @@ void LCD_Init(void)
 	Dio_GroupSetDirection(LCDD_Port,LCD_Mask,LCD_Mask);     
 	LCD_Command(LCD_4BitMode1);
 	LCD_Command(LCD_4BitMode2);
-	LCD_Command(LCD_2Lines5X8_4BitMode);
+	LCD_Command(LCD_2Lines5X8_4BitMode); 
 	LCD_Command(DisplayOnCursorOff); 
 	LCD_Command(ShiftCursorRight); 
 	LCD_Command(ClearDispaly); 

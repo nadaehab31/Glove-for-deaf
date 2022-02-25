@@ -26,8 +26,8 @@
 
 void LCD_Init(void);
 void LCD_Command(uint8 command);
-void LCD_Data(uint8 Data);   //kanet uint8 w 8ayrtaha
+void LCD_Data(uint8 Data);   
 void LCD_Enable(void);  
-void LCD_DataString(uint8* DataString); //kanet uint8 w 8ayartaha
+void LCD_DataString(uint8* DataString);
 void LCD_Postion(uint8 Row , uint8 Column );
 #endif /* LCD_H_ */

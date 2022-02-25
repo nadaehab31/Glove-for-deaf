@@ -30,9 +30,9 @@ ReturnValueType U8HEX2String (uint8 HEX,uint8 string[3])
 ReturnValueType U8Decimal2String (uint8 Decimal,uint8* string)
 {
 	string[3]= 0 ; // NULL
-	string[0]= Decimal/ 100 + '0' ;  // 0
-	string [1] = (Decimal%100)/10  + '0' ; // 3
-	string [2] = (Decimal%100)%10 + '0' ; // 2
+	string[0]= Decimal/ 100 + '0' ; 
+	string [1] = (Decimal%100)/10  + '0' ; 
+	string [2] = (Decimal%100)%10 + '0' ; 
 	
 	return OK;
 }
